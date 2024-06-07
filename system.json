@@ -1,0 +1,36 @@
+{
+  "id": "usr-modern",
+  "title": "Universal Simple Role-Playing Modern",
+  "description": "The Universal Simple Role-Playing System for FoundryVTT!",
+  "version": "0.1.23",
+  "compatibility": {
+    "minimum": 10,
+    "verified": "11"
+  },
+  "authors": [
+    {
+      "name": "Niklas Schönberg",
+      "url": "https://niklas.uplink.fi",
+      "email": "niklas@uplink.fi"
+    }
+  ],
+  "esmodules": ["module/usr.mjs"],
+  "styles": ["css/usr.css"],
+  "scripts": [],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 1,
+  "gridUnits": "m",
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": "power",
+  "url": "https://github.com/foonly/usr-modern",
+  "manifest": "https://github.com/foonly/usr-modern/releases/latest/download/system.json",
+  "download": "https://github.com/foonly/usr-modern/releases/latest/download/usr.zip",
+  "license": "CC BY-SA 4.0"
+}

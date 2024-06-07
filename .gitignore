@@ -1,0 +1,7 @@
+# IDE
+.idea/
+.vs/
+css/
+
+# Node Modules
+node_modules/

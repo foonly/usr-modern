@@ -1,0 +1,19 @@
+<div class="entry">
+    <input id="language" type="text" placeholder="{{localize 'USR.Language' }}" value="{{name}}"/>
+</div>
+<div class="entry">
+    <label for="speak">Speak:</label>
+    <select id="speak">
+        {{#each speakList as |item index| }}
+            <option value="{{ index }}" {{#if item.active}} selected="selected" {{/if}}>{{ item.label }}</option>
+        {{/each}}
+    </select>
+</div>
+<div class="entry">
+    <label for="write">Write:</label>
+    <select id="write">
+        {{#each writeList as |item index| }}
+            <option value="{{ index }}" {{#if item.active}} selected="selected" {{/if}}>{{ item.label }}</option>
+        {{/each}}
+    </select>
+</div>

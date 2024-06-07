@@ -1,0 +1,22 @@
+<div class="entry">
+    <label for="full-name">Full Name:</label>
+    <input id="full-name" name="system.info.fullName" type="text" value="{{system.info.fullName}}" placeholder="Full Name"/>
+</div>
+
+<div class="grid grid-3col">
+    <div class="entry">
+        <label for="age">Age:</label>
+        <input id="age" name="system.info.age" type="text" value="{{system.info.age}}"/>
+    </div>
+    <div class="entry">
+        <label for="height">Height:</label>
+        <input id="height" name="system.info.height" type="text" value="{{system.info.height}}"/>
+    </div>
+    <div class="entry">
+        <label for="weight">Weight:</label>
+        <input id="weight" name="system.info.weight" type="text" value="{{system.info.weight}}"/>
+    </div>
+</div>
+
+<h3>Biography:</h3>
+{{editor system.biography target="system.biography" button=true owner=owner editable=editable}}

@@ -1,0 +1,36 @@
+<tr>
+    <td class="trait-label">
+        <a class="trait-edit" data-trait="{{key}}" title="{{localize 'USR.EditTrait'}}">
+            <i class="fas fa-edit"></i>
+        </a>
+        {{ trait.label }}
+    </td>
+    <td class="trait-value rolls-{{trait.roll}}">
+        {{trait.value}}
+    </td>
+
+    <td class="trait-xp"><a class="roll-xp" data-trait="{{key}}">{{trait.xp}}/5</a></td>
+    <td class="trait-roll">
+        <button class="rollable roll die d10" data-roll-usr="4" data-trait="{{key}}" data-label="{{trait.label}}">4</button>
+        <button class="rollable roll die d10" data-roll-usr="3" data-trait="{{key}}" data-label="{{trait.label}}">3</button>
+        <button class="rollable roll die d10" data-roll-usr="2" data-trait="{{key}}" data-label="{{trait.label}}">2</button>
+        <button class="roll-dialog roll die d10" data-trait="{{key}}" data-label="{{trait.label}}">?</button>
+    </td>
+</tr>
+{{#each trait.spec }}
+<tr class="trait-specialization">
+    <td class="trait-label specialization">
+        - {{ title }}
+    </td>
+    <td class="trait-value rolls-{{ roll }}">
+        {{ value }}
+    </td>
+    <td class="trait-xp"><a class="roll-xp" data-trait="{{../key}}" data-spec="{{title}}">{{ xp }}/3</a></td>
+    <td class="trait-roll">
+        <button class="rollable roll die d10" data-roll-usr="4" data-trait="{{ ../key }}" data-spec="{{title}}" data-label="{{ title }}">4</button>
+        <button class="rollable roll die d10" data-roll-usr="3" data-trait="{{ ../key }}" data-spec="{{title}}" data-label="{{ title }}">3</button>
+        <button class="rollable roll die d10" data-roll-usr="2" data-trait="{{ ../key }}" data-spec="{{title}}" data-label="{{ title }}">2</button>
+        <button class="roll-dialog roll die d10" data-trait="{{ ../key }}" data-spec="{{title}}" data-label="{{ title }}">?</button>
+    </td>
+</tr>
+{{/each}}

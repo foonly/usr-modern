@@ -1,0 +1,53 @@
+<h3>Damage Monitor</h3>
+<div class="damage-monitor">
+    {{#each system.damage.monitor}}
+        <div class="mod">{{modifier}}</div>
+    {{/each}}
+    {{#each system.damage.monitor}}
+        <div class="val {{value}}">{{value}}</div>
+    {{/each}}
+</div>
+
+<div class="grid grid-3col">
+    <table>
+        <tr>
+            {{#each system.damage.resistance as |value type| }}
+                <th>{{ type }}</th>
+            {{/each}}
+        </tr>
+        <tr>
+            {{#each system.damage.resistance as |value type| }}
+                <th>{{ value }}</th>
+            {{/each}}
+        </tr>
+    </table>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+</div>
+
+
+<div class="grid grid-3col">
+    <button class="add-heal">Heal (HP: {{system.health.hp}})</button>
+    <button class="remove-stun">Remove Stun</button>
+    <button class="add-damage">Take Damage</button>
+</div>
+
+<table class="traits-table">
+    <thead>
+    <tr>
+        <th>Trait</th>
+        <th>Value</th>
+        <th>XP</th>
+        <th>Roll</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{> "systems/usr/templates/actor/parts/actor-trait.hbs" trait=system.traits.initiative key="initiative" }}
+    {{> "systems/usr/templates/actor/parts/actor-trait.hbs" trait=system.traits.melee key="melee" }}
+    {{> "systems/usr/templates/actor/parts/actor-trait.hbs" trait=system.traits.ranged key="ranged" }}
+    </tbody>
+</table>

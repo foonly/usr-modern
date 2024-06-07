@@ -1,0 +1,82 @@
+.traits-table {
+  .trait-value {
+    font-size: 2em;
+    text-align: center;
+
+    &.rolls-1::after {
+      vertical-align: super;
+      font-size: .5em;
+      content: "*";
+    }
+    &.rolls-2::after {
+      vertical-align: super;
+      font-size: .5em;
+      content: "**";
+    }
+  }
+  .trait-xp {
+    text-align: center;
+  }
+  .trait-roll {
+    width: 110px;
+  }
+  .trait-specialization {
+    font-size: .9em;
+    .trait-label {
+      padding-left: 2rem;
+    }
+    .trait-value {
+      font-size: 1.5em;
+    }
+  }
+}
+
+button.die {
+  position: relative;
+  border: 0;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  float: left;
+  margin-right: 1px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  font-size: var(--font-size-16);
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  &.d6 {
+    background-image: url("/icons/svg/d6-grey.svg");
+  }
+  &.d10 {
+    background-image: url("/icons/svg/d10-grey.svg");
+  }
+}
+
+
+.damage-monitor {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, auto);
+
+  .mod {
+    background-color: $c-tan;
+    border: 1px $c-dark solid;
+    color: $c-faint;
+    text-align: center;
+    padding: 4px;
+  }
+
+  .val {
+    text-transform: uppercase;
+    text-align: center;
+    padding: 4px;
+    border: 1px $c-dark solid;
+    min-height: 24px;
+  }
+}
+
+.action-icon {
+  margin: .5rem;
+}

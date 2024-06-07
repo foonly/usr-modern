@@ -1,0 +1,21 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm ci
+      - run: npm run build
+      - run: zip -r usr.zip * -x "versionSync.mjs" "scss/*" "node_modules/*" "package*.json" @
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "system.json,usr.zip"

@@ -1,0 +1,11 @@
+<div class="entry">
+    <input id="knowledge" type="text" placeholder="Knowledge Skill" value="{{name}}"/>
+</div>
+<div class="entry">
+    <label for="level">{{localize 'USR.Level' }}:</label>
+    <select id="level">
+        {{#each levelList as | item index | }}
+            <option value="{{ index }}" {{#if item.active}} selected="selected" {{/if}}>{{ item.label }}</option>
+        {{/each}}
+    </select>
+</div>

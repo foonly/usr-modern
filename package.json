@@ -1,0 +1,20 @@
+{
+  "name": "usr",
+  "version": "0.1.23",
+  "description": "Simple SCSS compiler.",
+  "scripts": {
+    "build": "sass scss:css",
+    "watch": "sass --watch scss:css",
+    "version": "node versionSync.mjs && git add system.json",
+    "postversion": "git push && git push --tags"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ],
+  "author": "Niklas Schönberg",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "sass": "^1.69.5"
+  }
+}

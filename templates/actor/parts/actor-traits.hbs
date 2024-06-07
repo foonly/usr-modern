@@ -1,0 +1,15 @@
+<table class="traits-table">
+    <thead>
+        <tr>
+            <th>Trait</th>
+            <th>Value</th>
+            <th>XP</th>
+            <th>Roll</th>
+        </tr>
+    </thead>
+    <tbody>
+    {{#each system.traits as |trait key| }}
+        {{> "systems/usr/templates/actor/parts/actor-trait.hbs" trait=trait key=key }}
+    {{/each}}
+    </tbody>
+</table>

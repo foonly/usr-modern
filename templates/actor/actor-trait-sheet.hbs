@@ -1,0 +1,28 @@
+<form class="trait-sheet" autocomplete="off">
+    <main class="sheet-body">
+        <label for="trait-{{key}}">{{ trait.label }}</label>
+        <input type="number" min="0" max="7" id="trait-{{key}}" name="value" value="{{trait.value}}" data-dtype="Number" />
+        <label for="roll-{{key}}">Rolls</label>
+        <input type="number" min="0" max="2" id="roll-{{key}}" name="roll" value="{{trait.roll}}" data-dtype="Number" />
+        <label for="xp-{{key}}">XP</label>
+        <input type="number" min="0" max="5" id="xp-{{key}}" name="xp" value="{{trait.xp}}" data-dtype="Number" />
+        {{#if trait.hasSpec}}
+            {{#each trait.spec as |spec nr| }}
+                <input type="text" name="spec-{{nr}}-title" value="{{spec.title}}" />
+                <input type="number" min="0" max="3" name="spec-{{nr}}-value" value="{{spec.value}}" data-dtype="Number" />
+                <label>Rolls</label>
+                <input type="number" min="0" max="2" name="spec-{{nr}}-roll" value="{{spec.roll}}" data-dtype="Number" />
+                <label>XP</label>
+                <input type="number" min="0" max="3" name="spec-{{nr}}-xp" value="{{spec.xp}}" data-dtype="Number" />
+            {{/each}}
+            <a class="add-spec grid-6col action-icon" data-trait="{{key}}" title="{{localize 'USR.AddSpec'}}">
+                <i class="fas fa-plus"></i> {{localize 'USR.AddSpec'}}
+            </a>
+        {{/if}}
+    </main>
+    <footer class="sheet-footer flexrow">
+        <button id="ok" type="submit" name="submit">
+            <i class="fa fa-check"></i> OK
+        </button>
+    </footer>
+</form>

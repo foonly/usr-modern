@@ -1,0 +1,19 @@
+// Add custom fonts by visiting and search https://fonts.google.com
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+// Import utilities.
+@import 'utils/colors';
+@import 'utils/mixins';
+@import 'utils/variables';
+
+/* Global styles */
+@import 'global/window';
+@import 'global/grid';
+@import 'global/flex';
+
+/* Styles limited to usr sheets */
+.usr {
+  @import "components/forms";
+  @import "components/char";
+  @import "components/trait-sheet";
+}

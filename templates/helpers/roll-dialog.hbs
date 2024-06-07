@@ -1,0 +1,22 @@
+<div>
+    <h3>
+        {{#if label}}
+            Make <span id="label">{{ label }}</span> Roll
+        {{else}}
+            Make Custom Roll
+        {{/if}}
+    </h3>
+    {{#if traits}}
+        <select id="trait">
+            <option value="">Select Trait</option>
+            {{#each traits }}
+                <option value="{{index}}"{{#if active}} selected="selected" {{/if}}>{{label}} ({{ value }})</option>
+            {{/each}}
+        </select>
+    {{/if}}
+    <select id="difficulty">
+        {{#each difficulty }}
+            <option value="{{dice}}"{{#if active}} selected="selected" {{/if}}>{{label}}</option>
+        {{/each}}
+    </select>
+</div>

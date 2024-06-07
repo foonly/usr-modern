@@ -1,0 +1,113 @@
+.item-form {
+  font-family: $font-primary;
+}
+
+.entry {
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 8px 0;
+
+  label {
+    padding: 4px 8px;
+    color: $c-grey;
+  }
+
+  input {
+    width: unset;
+    height: unset;
+    flex-grow: 1;
+    padding: 4px;
+  }
+
+  &.number {
+    input {
+      max-width: 60px;
+    }
+  }
+}
+
+.sheet-header {
+  flex: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+
+  .profile-img {
+    flex: 0 0 100px;
+    height: 100px;
+    margin-right: 10px;
+    border: 0;
+  }
+
+  .header-fields {
+    flex: 1;
+  }
+
+  h1.charname {
+    height: 50px;
+    padding: 0px;
+    margin: 5px 0;
+    border-bottom: 0;
+    input {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+  }
+
+  .chip-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .dice {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .chips {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .chip {
+      background-image: url("/systems/usr/assets/chips/white.webp");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 48px;
+      width: 48px;
+
+      &[data-chip="green"] {
+        background-image: url("/systems/usr/assets/chips/green.webp");
+      }
+      &[data-chip="blue"] {
+        background-image: url("/systems/usr/assets/chips/blue.webp");
+      }
+      &[data-chip="red"] {
+        background-image: url("/systems/usr/assets/chips/red.webp");
+      }
+      &[data-chip="black"] {
+        background-image: url("/systems/usr/assets/chips/black.webp");
+      }
+    }
+  }
+}
+
+.sheet-tabs {
+  flex: 0;
+}
+
+.editor {
+  min-height: 100px;
+  .tox {
+    background-color: #66666630;
+    min-height: 400px;
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "Actor": {
+    "types": ["character", "npc"],
+    "templates": {
+      "base": {
+        "health": {
+          "d": 0,
+          "s": 0,
+          "m": 0,
+          "l": 0,
+          "x": 0,
+          "hp": 0,
+          "status": 0
+        },
+        "position": {
+          "value": 4,
+          "min": 0,
+          "max": 5
+        },
+        "traits": {
+          "fortitude": {
+            "label": "Fortitude",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true
+          },
+          "intelligence": {
+            "label": "Intelligence",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true
+          },
+          "quickness": {
+            "label": "Quickness",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true
+          },
+          "willpower": {
+            "label": "Willpower",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true
+          },
+          "awareness": {
+            "label": "Awareness",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true
+          },
+          "mobility": {
+            "label": "Mobility",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true,
+            "spec": []
+          },
+          "melee": {
+            "label": "Melee",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true,
+            "spec": []
+          },
+          "ranged": {
+            "label": "Ranged",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true,
+            "spec": []
+          },
+          "medicine": {
+            "label": "Medicine",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true,
+            "spec": []
+          },
+          "engineering": {
+            "label": "Engineering",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true,
+            "spec": []
+          },
+          "pilot": {
+            "label": "Pilot",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true,
+            "spec": []
+          },
+          "computers": {
+            "label": "Computers",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true,
+            "spec": []
+          },
+          "survival": {
+            "label": "Survival",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true,
+            "spec": []
+          },
+          "subterfuge": {
+            "label": "Subterfuge",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true,
+            "spec": []
+          },
+          "animals": {
+            "label": "Animals",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true,
+            "spec": []
+          },
+          "artisan": {
+            "label": "Artisan",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true,
+            "spec": []
+          },
+          "administer": {
+            "label": "Administer",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true,
+            "spec": []
+          },
+          "precence": {
+            "label": "Precence",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true,
+            "spec": []
+          },
+          "connect": {
+            "label": "Connect",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true,
+            "spec": []
+          },
+          "perform": {
+            "label": "Perform",
+            "value": 1,
+            "xp": 0,
+            "roll": 0,
+            "hasSpec": true,
+            "spec": []
+          }
+        },
+        "info": {
+          "fullName": "",
+          "biography": "",
+          "age": "",
+          "height": "",
+          "weight": ""
+        }
+      }
+    },
+    "character": {
+      "templates": ["base"],
+      "xp": 0,
+      "languages": [],
+      "knowledge": [],
+      "assets": [],
+      "chips": {
+        "white": 0,
+        "green": 0,
+        "blue": 0,
+        "red": 0,
+        "black": 0
+      }
+    },
+    "npc": {
+      "templates": ["base"]
+    }
+  },
+  "Item": {
+    "types": ["item", "melee", "ranged", "armor"],
+    "templates": {
+      "base": {
+        "weight": 0,
+        "description": ""
+      }
+    },
+    "item": {
+      "templates": ["base"],
+      "quantity": 1
+    },
+    "melee": {
+      "templates": ["base"],
+      "damage": 1,
+      "type": "x"
+    },
+    "ranged": {
+      "templates": ["base"],
+      "damage": 1,
+      "accuracy": 1,
+      "penetration": 0,
+      "shots": 1,
+      "reload": 0,
+      "ammo": 0
+    },
+    "armor": {
+      "templates": ["base"]
+    }
+  }
+}

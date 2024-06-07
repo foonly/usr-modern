@@ -1,0 +1,61 @@
+<table class="language-table">
+  <thead>
+    <tr>
+      <th>{{localize "USR.Language"}}</th>
+      <th>Speak</th>
+      <th>Write</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each languageList as |lang index|}}
+      <tr>
+        <td>
+          <a
+            class="edit-language action-icon"
+            data-index="{{index}}"
+            title="{{localize 'USR.EditLanguage'}}"
+          >
+            <i class="fas fa-edit"></i>
+          </a>
+          {{lang.name}}
+        </td>
+        <td>{{lang.speak}}</td>
+        <td>{{lang.write}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+<a class="edit-language action-icon" title="{{localize 'USR.AddLanguage'}}">
+  <i class="fas fa-plus"></i>
+  {{localize "USR.AddLanguage"}}
+</a>
+
+<table class="knowledge-table">
+  <thead>
+    <tr>
+      <th>{{localize "USR.Knowledge"}}</th>
+      <th>{{localize "USR.Level"}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each knowledgeList as |know index|}}
+      <tr>
+        <td>
+          <a
+            class="edit-knowledge action-icon"
+            data-index="{{index}}"
+            title="{{localize 'USR.EditKnowledge'}}"
+          >
+            <i class="fas fa-edit"></i>
+          </a>
+          {{know.name}}
+        </td>
+        <td>{{know.level}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+<a class="edit-knowledge action-icon" title="{{localize 'USR.AddKnowledge'}}">
+  <i class="fas fa-plus"></i>
+  {{localize "USR.AddKnowledge"}}
+</a>
