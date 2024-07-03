@@ -3,19 +3,34 @@ name: Release
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v3
-      - run: npm ci
-      - run: npm run build
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm
+        with:
+          run_install: false
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Install Packages
+        run: pnpm install
+
       - run: zip -r usr.zip * -x "versionSync.mjs" "scss/*" "node_modules/*" "package*.json" @
+
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "system.json,usr.zip"
