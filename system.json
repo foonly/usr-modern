@@ -2,7 +2,7 @@
   "id": "usr-modern",
   "title": "Universal Simple Role-Playing Modern",
   "description": "The Universal Simple Role-Playing System for FoundryVTT!",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "compatibility": {
     "minimum": 12,
     "verified": "12"
@@ -14,8 +14,12 @@
       "email": "niklas@uplink.fi"
     }
   ],
-  "esmodules": ["module/usr.mjs"],
-  "styles": ["css/usr.css"],
+  "esmodules": [
+    "module/usr.mjs"
+  ],
+  "styles": [
+    "css/usr.css"
+  ],
   "scripts": [],
   "packs": [],
   "languages": [
