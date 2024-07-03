@@ -23,11 +23,11 @@ jobs:
         with:
           run_install: false
 
-      - name: Build
-        run: pnpm run build
-
       - name: Install Packages
         run: pnpm install
+
+      - name: Build
+        run: pnpm run build
 
       - run: zip -r usr.zip * -x "versionSync.mjs" "scss/*" "node_modules/*" "package*.json" @
 
