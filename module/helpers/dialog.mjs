@@ -2,7 +2,7 @@ import { usr } from "./config.mjs";
 
 export async function useChip(data) {
   const confirmation = await Dialog.confirm({
-    content: `Are you sure you want to use your ${data.type} chip?`
+    content: `Are you sure you want to use your ${data.type} chip?`,
   });
 
   if (!confirmation) {
@@ -14,12 +14,12 @@ export async function useChip(data) {
     green: data.actor.system.chips.green,
     blue: data.actor.system.chips.blue,
     red: data.actor.system.chips.red,
-    black: data.actor.system.chips.black
+    black: data.actor.system.chips.black,
   };
 
   if (newChips[data.type] > 0) {
     newChips[data.type]--;
-    data.actor.update({"system.chips": newChips});
+    data.actor.update({ "system.chips": newChips });
     return data.type;
   }
 }
@@ -39,7 +39,7 @@ export function editAsset(actor, index = -1) {
   };
 
   renderTemplate(
-    "systems/usr/templates/helpers/asset-dialog.hbs",
+    "systems/usr-modern/templates/helpers/asset-dialog.hbs",
     data
   ).then((content) => {
     let d = new Dialog({
@@ -98,7 +98,7 @@ export function editLanguage(actor, index = -1) {
   };
 
   renderTemplate(
-    "systems/usr/templates/helpers/language-dialog.hbs",
+    "systems/usr-modern/templates/helpers/language-dialog.hbs",
     data
   ).then((content) => {
     let d = new Dialog({
@@ -174,7 +174,7 @@ export function editKnowledge(actor, index = -1) {
   };
 
   renderTemplate(
-    "systems/usr/templates/helpers/knowledge-dialog.hbs",
+    "systems/usr-modern/templates/helpers/knowledge-dialog.hbs",
     data
   ).then((content) => {
     let d = new Dialog({
@@ -194,7 +194,6 @@ export function editKnowledge(actor, index = -1) {
                   level,
                 });
               } else {
-
                 knowledge[index].name = name;
                 knowledge[index].level = level;
               }

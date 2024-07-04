@@ -132,7 +132,7 @@ export function usrRoll(data) {
 }
 
 function showRoll(result, speaker, flavor = "") {
-  renderTemplate("systems/usr/templates/helpers/roll.hbs", result).then(
+  renderTemplate("systems/usr-modern/templates/helpers/roll.hbs", result).then(
     (content) => {
       // TODO fix v12 compatibility.
       // Prepare chat data
@@ -154,8 +154,8 @@ function showRoll(result, speaker, flavor = "") {
   );
 }
 
-export function makeRoll(data) {
-  if (data.actor.system.traits) {
+export function makeRoll(data = {}) {
+  if (data.actor && data.actor.system.traits) {
     data.traits = [];
     Object.keys(data.actor.system.traits).forEach((key) => {
       const trait = data.actor.system.traits[key];
@@ -180,40 +180,42 @@ export function makeRoll(data) {
     });
   }
   data.difficulty = usr.difficulty;
-  renderTemplate("systems/usr/templates/helpers/roll-dialog.hbs", data).then(
-    (content) => {
-      let d = new Dialog({
-        title: "Custom Roll",
-        content,
-        buttons: {
-          roll: {
-            icon: '<i class="fas fa-dice-d10"></i>',
-            label: "Roll",
-            callback: (html) => {
-              const flavor = html.find("#label")[0].innerHTML ?? "Custom";
-              const difficulty = parseInt(
-                html.find("#difficulty")[0].value ?? 1
-              );
-              const parts = (html.find("#trait")[0].value ?? "1").split("/");
-              const trait = parts[0];
-              const spec = parts[1] ?? "";
+  renderTemplate(
+    "systems/usr-modern/templates/helpers/roll-dialog.hbs",
+    data
+  ).then((content) => {
+    let d = new Dialog({
+      title: "Custom Roll",
+      content,
+      buttons: {
+        roll: {
+          icon: '<i class="fas fa-dice-d10"></i>',
+          label: "Roll",
+          callback: (html) => {
+            const labelElement = html.find("#label");
+            const flavor = labelElement[0]
+              ? labelElement[0].innerHTML ?? "Custom"
+              : "Custom";
+            const difficulty = parseInt(html.find("#difficulty")[0].value ?? 1);
+            const parts = (html.find("#trait")[0].value ?? "1").split("/");
+            const trait = parts[0];
+            const spec = parts[1] ?? "";
 
-              usrRoll({
-                flavor,
-                difficulty,
-                trait,
-                spec,
-                actor: data.actor,
-              });
-            },
+            usrRoll({
+              flavor,
+              difficulty,
+              trait,
+              spec,
+              actor: data.actor ?? {},
+            });
           },
         },
-        default: "roll",
-      });
-      d.options.classes = ["usr", "dialog", "roll"];
-      d.render(true);
-    }
-  );
+      },
+      default: "roll",
+    });
+    d.options.classes = ["usr", "dialog", "roll"];
+    d.render(true);
+  });
 }
 
 export function rollXp(data) {

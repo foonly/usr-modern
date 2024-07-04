@@ -22,7 +22,7 @@ export class usrActorSheet extends ActorSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["usr", "sheet", "actor"],
-      template: "systems/usr/templates/actor/actor-sheet.hbs",
+      template: "systems/usr-modern/templates/actor/actor-sheet.hbs",
       width: 600,
       height: 600,
       tabs: [
@@ -37,7 +37,7 @@ export class usrActorSheet extends ActorSheet {
 
   /** @override */
   get template() {
-    return `systems/usr/templates/actor/actor-${this.actor.type}-sheet.hbs`;
+    return `systems/usr-modern/templates/actor/actor-${this.actor.type}-sheet.hbs`;
   }
 
   /* -------------------------------------------- */

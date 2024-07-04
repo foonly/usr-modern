@@ -13,6 +13,9 @@
                 <option value="{{index}}"{{#if active}} selected="selected" {{/if}}>{{label}} ({{ value }})</option>
             {{/each}}
         </select>
+    {{ else }}
+        <input id="trait" type="number" placeholder="Trait" max="7" />
+        <input id="spec" type="number" placeholder="Spec" max="3" />
     {{/if}}
     <select id="difficulty">
         {{#each difficulty }}

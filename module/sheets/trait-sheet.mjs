@@ -14,7 +14,7 @@ export class TraitSheet extends FormApplication {
       popOut: true,
       width: 400,
       height: 400,
-      template: "systems/usr/templates/actor/actor-trait-sheet.hbs",
+      template: "systems/usr-modern/templates/actor/actor-trait-sheet.hbs",
       closeOnSubmit: false,
       id: "trait-edit-sheet",
       title: "Edit Trait",

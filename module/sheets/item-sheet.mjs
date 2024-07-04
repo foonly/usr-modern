@@ -21,7 +21,7 @@ export class usrItemSheet extends ItemSheet {
 
   /** @override */
   get template() {
-    const path = "systems/usr/templates/item";
+    const path = "systems/usr-modern/templates/item";
     // Return a single sheet for all item types.
     // return `${path}/item-sheet.hbs`;
 
