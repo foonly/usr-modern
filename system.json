@@ -2,7 +2,7 @@
   "id": "usr-modern",
   "title": "Universal Simple Role-Playing Modern",
   "description": "The Universal Simple Role-Playing System for FoundryVTT!",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "compatibility": {
     "minimum": 12,
     "verified": "12"
